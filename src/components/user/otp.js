@@ -11,11 +11,9 @@ const Signin = () =>{
         error: "",
         loading: false,
         didRedirect: false,
-        country_code : "+91",
-        flagImg: "https://flagpedia.net/data/flags/h80/in.webp",
         telephoneNumber: ""
     })
-    const { error, loading, didRedirect, flagImg, telephoneNumber, country_code} = values;
+    const {email, password, error, loading, didRedirect, flagImg, telephoneNumber, country_code} = values;
 
     //sets state on change of value in the fields
     const handleChange = name => event =>{
