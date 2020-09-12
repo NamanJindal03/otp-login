@@ -1,0 +1,119 @@
+#logo-2{
+    position: absolute;
+    left: 36.53%;
+    right: 32.4%;
+    top: 13.12%;
+    bottom: 70.69%;
+    height: 160px;
+}
+
+#otp-text-1{
+    position: absolute;
+    left: 12.53%;
+    right: 13.33%;
+    top: 35.59%;
+    bottom: 61.58%;
+
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+
+    color: #333333;
+}
+
+#otp-text-2{
+    position: absolute;
+left: 14.13%;
+right: 16.53%;
+top: 43.47%;
+bottom: 54.19%;
+
+font-family: Work Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+text-align: center;
+
+/* identical to box height */
+
+
+color: #666666;
+}
+
+#change-number{
+    position: absolute;
+left: 31.73%;
+right: 32%;
+top: 46.8%;
+bottom: 51.48%;
+
+font-family: Work Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+text-align: center;
+/* identical to box height */
+
+
+color: #F7B348;
+}
+
+#otp-number{
+    position: absolute;
+    left: 37.4%;
+    top: 58.93%;
+    bottom: 35.28%;
+    display: flex;
+    width: 200px;
+}
+
+#otp-number input{
+    width: 30px;
+    justify-content: space-between;
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #333333;
+}
+
+#otp-text-3{
+    position: absolute;
+    left: 33.67%;
+    right: 34.67%;
+    top: 75.25%;
+    bottom: 22.41%;
+
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+
+
+    color: #999999;
+}
+#otp-text-4{
+    position: absolute;
+    left: 56.6%;
+    right: 14.93%;
+    top: 75.25%;
+    bottom: 22.41%;
+
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+
+
+    color: #F7B348;
+}

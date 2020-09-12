@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import '../../index.css';
+import '../../signin.css'
 import logo from '../../images/AK_logo.png'
 import CountryCodes from './country_extension';
 import { isValidPhoneNumber } from 'react-phone-number-input'
@@ -58,7 +59,10 @@ const Signin = () =>{
     //performs redirect on succesfull login
     const performRedirect = () =>{
         if(didRedirect){
-            return <Redirect to ="/otp" />
+            return <Redirect to ={{
+                pathname:"/otp", 
+                state: {completeNumber: `${country_code}${telephoneNumber}`}
+            }}/>
             
         }
     }
@@ -90,34 +94,9 @@ const Signin = () =>{
                         <input type="number" id="telephone-number-input" onChange={handleChange("telephoneNumber")} value={telephoneNumber}/>
                         <div id="sms-disclamer">We will send you a one time SMS message. Charges may apply.</div>
                     </div>
-                    <input type="button" id="sign-in-btn" value="Sign In with OTP " onClick={onSubmit}/>
+                    <input type="button" clas="submit-btn" value="Sign In with OTP " onClick={onSubmit}/>
                 </form>
-                {/* <div className="card-header card-header-success">
-                  <h2 className="card-title">Log In</h2>
-                  <h5 className="card-title">Welcome Back, Doctor</h5>
-                </div>
-                <div className="card-body ">
-                  <form> */}
-                        {/* {errorMessage()} */}
-                        
-                      {/* <div className="col-md-8 offset-sm-2">
-                        <div className="form-group has-success">
-                          <label className="bmd-label-floating">Email Address</label>
-                          <input type="email" className="form-control" onChange={handleChange("email")} value={email}/>
-                        </div>
-                      </div>
-                      <div className="col-md-8 offset-sm-2">
-                        <div className="form-group has-success">
-                          <label className="bmd-label-floating">Password</label>
-                          <input type="password" className="form-control" onChange={handleChange("password")} value={password}/>
-                        </div>
-                      </div>
-                    <div className="text-center">
-                        <button onClick={onSubmit} type="submit" className="btn btn-success ">Login</button>
-                    </div>
-                    
-                  </form>
-                </div> */}
+                
             </div>
         )
     }

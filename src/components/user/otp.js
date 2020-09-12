@@ -1,19 +1,24 @@
 import React, {useState} from 'react'
 import '../../index.css';
-import logo from '../../images/AK_logo.png'
+import '../../otp.css'
+import logo from '../../images/hand_holding_phone.png'
 import CountryCodes from './country_extension';
 import { isValidPhoneNumber } from 'react-phone-number-input'
 import { Redirect} from 'react-router-dom'
 
 
-const Signin = () =>{
+const Otp = (props) =>{
     const [values, setValues] = useState({
         error: "",
         loading: false,
         didRedirect: false,
-        telephoneNumber: ""
+        telephoneNumber: "",
+        otpNumber1:"",
+        otpNumber2:"",
+        otpNumber3:"",
+        otpNumber4:"",
     })
-    const {email, password, error, loading, didRedirect, flagImg, telephoneNumber, country_code} = values;
+    const { error, loading, didRedirect, telephoneNumber, country_code, otpNumber1, otpNumber2, otpNumber3, otpNumber4} = values;
 
     //sets state on change of value in the fields
     const handleChange = name => event =>{
@@ -22,10 +27,7 @@ const Signin = () =>{
         console.log(event.target.value);
         setValues({...values, error:false, [name]:event.target.value})
     }
-    const countryFlagHandler = () =>{
-        const select = document.getElementById('country_list')
-        setValues({...values, flagImg:`https://flagpedia.net/data/flags/h80/${select.selectedOptions[0].dataset.countrycode.toLowerCase()}.webp`})
-    }
+    
 
     //displays error on the screen if error state is set
     const errorMessage = () => (
@@ -40,17 +42,13 @@ const Signin = () =>{
         event.preventDefault();
         //sets loading state to true, error to false
         setValues({...values, error: false, loading: true})
-        const completeNumber = `${country_code}${telephoneNumber}`;
-        console.log(completeNumber); 
-        if(completeNumber.length <5) {
-            alert('Too Short ')
-         } else if(isValidPhoneNumber(completeNumber)) {
-           alert('Valid number')
-           setValues({...values, error: false, loading: false, didRedirect: true})
-         } else {
-           alert('InValid number')
-           setValues({...values, error: "Invalid Phone Number", loading: true})
-         }
+        const completeOtp = `${otpNumber1}${otpNumber2}${otpNumber3}${otpNumber4}`;
+        console.log(completeOtp); 
+        if(completeOtp == '1234'){
+            console.log('redirect');
+        }else{
+            console.log("not redirect");
+        }
     }
 
     //performs redirect on succesfull login
@@ -69,53 +67,33 @@ const Signin = () =>{
             )
         )
     }
+    const changePhoneNumber = () =>{
+        console.log("here");
+        return <Redirect to ="/sign-in" />
+    }
     //ui of signin form
-    const signInForm = () =>{
+    const otpForm = () =>{
         return(
             
             <div className="container">
-                <img src={logo} alt="" id="logo"/>
-                <span id="welcome-text"> Welcome Back </span>
-                <span id="sign-in-text">Please sign in to your account </span>
+                {console.log(props.location.state.completeNumber)}
+                <img src={logo} alt="" id="logo-2"/>
+                <span id="otp-text-1"> Please verify Mobile number </span>
+                <span id="otp-text-2">An OTP is sent to {props.location.state.completeNumber} </span>
+                <input type="button" id="change-number" onClick={changePhoneNumber} value="Change Phone Number" />
                 <form>
                     {errorMessage()}
-                    <label id="phone-label">Enter Contact Number</label>
-                    <div className="tel-box">
-                        <div className="select-box" onChange={countryFlagHandler}>
-                            <img src={flagImg} alt="" id="flag-img"/>
-                            <CountryCodes handleChange= {handleChange}/>
-                        </div>
-                        <input type="number" id="telephone-number-input" onChange={handleChange("telephoneNumber")} value={telephoneNumber}/>
-                        <div id="sms-disclamer">We will send you a one time SMS message. Charges may apply.</div>
+                    <div id="otp-number">
+                        <input type="text" maxLength="1" value={otpNumber1} onChange={handleChange("otpNumber1")}/>
+                        <input type="text" maxLength="1" value={otpNumber2} onChange={handleChange("otpNumber2")}/>
+                        <input type="text" maxLength="1" value={otpNumber3} onChange={handleChange("otpNumber3")}/>
+                        <input type="text" maxLength="1" value={otpNumber4} onChange={handleChange("otpNumber4")}/>
                     </div>
-                    <input type="button" id="sign-in-btn" value="Sign In with OTP " onClick={onSubmit}/>
+                    <div id="otp-text-3">Didn’t receive the code?</div>
+                    <span id="otp-text-4">Resend</span>
+                    <input type="button" className="submit-btn" value="Verify " onClick={onSubmit}/>
                 </form>
-                {/* <div className="card-header card-header-success">
-                  <h2 className="card-title">Log In</h2>
-                  <h5 className="card-title">Welcome Back, Doctor</h5>
-                </div>
-                <div className="card-body ">
-                  <form> */}
-                        {/* {errorMessage()} */}
-                        
-                      {/* <div className="col-md-8 offset-sm-2">
-                        <div className="form-group has-success">
-                          <label className="bmd-label-floating">Email Address</label>
-                          <input type="email" className="form-control" onChange={handleChange("email")} value={email}/>
-                        </div>
-                      </div>
-                      <div className="col-md-8 offset-sm-2">
-                        <div className="form-group has-success">
-                          <label className="bmd-label-floating">Password</label>
-                          <input type="password" className="form-control" onChange={handleChange("password")} value={password}/>
-                        </div>
-                      </div>
-                    <div className="text-center">
-                        <button onClick={onSubmit} type="submit" className="btn btn-success ">Login</button>
-                    </div>
-                    
-                  </form>
-                </div> */}
+                
             </div>
         )
     }
@@ -123,10 +101,10 @@ const Signin = () =>{
         <>
             
             {/* {loadingMessage()} */}
-            {signInForm()}
+            {otpForm()}
             {performRedirect()}
                       
         </>   
     )
 }
-export default Signin;
+export default Otp;

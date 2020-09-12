@@ -17,143 +17,7 @@ body{
   margin-right:30%; */
   
 }
-
-/* Sign in screen */
-#logo{
-  position: absolute;
-  width: 264px;
-  height: 50px;
-  left: calc(50% - 264px/2 - 0.5px);
-  top: calc(50% - 50px/2 - 225px);
-}
-#welcome-text{
-  position: absolute;
-  width: 174px;
-  height: 28px;
-  left: calc(50% - 174px/2 + 0.5px);
-  top: calc(50% - 28px/2 - 75px);
-
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 28px;
-  text-align: center;
-
-  color: #000000;
-}
-#sign-in-text{
-  position: absolute;
-  width: 237px;
-  height: 19px;
-  left: calc(50% - 237px/2 + 1px);
-  top: calc(50% - 19px/2 - 31.5px);
-
-  font-family: Work Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 19px;
-  text-align: center;
-  /* identical to box height */
-
-
-  color: #666666;
-}
-#phone-label{
-  position: absolute;
-width: 134px;
-height: 14px;
-left: calc(50% - 134px/2 - 90.5px);
-top: calc(50% - 14px/2 + 46px);
-
-font-style: normal;
-font-weight: normal;
-font-size: 12px;
-line-height: 14px;
-color: #999999;
-z-index: 2;
-background-color: #eceaea;
-}
-#flag-img{
-  position: absolute;
-    width: 21px;
-    height: 13px;
-    left: 14px;
-    top: 16px;
-}
-.tel-box{
-  position: absolute;
-  width: 343px;
-  height: 44px;
-  left: calc(50% - 343px/2);
-  top: calc(50% - 44px/2 + 68px);
-
-  border: 1px solid #FFD37D;
-  box-sizing: border-box;
-  border-radius: 5px;
-}
-#country_list{
-  position: absolute;
-  width: 62px;
-  height: 17px;
-  left: 43px;
-  top: 15px;
-
-  font-family: Work Sans;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 14px;
-  color: #000000;
-}
-select{
-  background-color: #eceaea;
-}
-#telephone-number-input{
-  position: absolute;
-    width: 160px;
-    height: 21px;
-    left: 113px;
-    top: 11px;
-    font-family: Work Sans;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 21px;
-    color: #333333;
-    border: none;
-    background-color: #eaeaea;
-}
-#telephone-number-input:focus{
-  outline:none;
-}
-#telephone-number-input:visited{
-  background-color: #eaeaea;
-}
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-#sms-disclamer{
-  position: absolute;
-width: 343px;
-height: 28px;
-left: calc(50% - 343px/2);
-top: calc(50% - 28px/2 + 135px);
-
-font-family: Work Sans;
-font-style: normal;
-font-weight: normal;
-font-size: 12px;
-line-height: 14px;
-text-align: center;
-
-color: #999999;
-}
-
-#sign-in-btn{
+.submit-btn{
   position: absolute;
   width: 224px;
   height: 36px;
@@ -165,20 +29,8 @@ color: #999999;
   color: #FFFFFF;
   border:none;
 }
-
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
-
-.alert-danger{
-  color: red;
-  position: absolute;
-  width: 153px;
-  height: 14px;
-  left: calc(50% - 134px/2 - 89.5px);
-  top: calc(50% - 14px/2 + 17px);
-
+.submit-btn:focus{
+  outline: none;
 }
 
 @media screen and (max-width: 720px) {
