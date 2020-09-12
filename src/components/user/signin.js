@@ -27,7 +27,7 @@ const Signin = () =>{
     }
     const countryFlagHandler = () =>{
         const select = document.getElementById('country_list')
-        setValues({...values, flagImg:`https://flagpedia.net/data/flags/h80/${select.selectedOptions[0].dataset.countrycode.toLowerCase()}.webp`})
+        setValues(prevState=>({...prevState, flagImg:`https://flagpedia.net/data/flags/h80/${select.selectedOptions[0].dataset.countrycode.toLowerCase()}.webp`}))
     }
 
     //displays error on the screen if error state is set
@@ -94,7 +94,7 @@ const Signin = () =>{
                         <input type="number" id="telephone-number-input" onChange={handleChange("telephoneNumber")} value={telephoneNumber}/>
                         <div id="sms-disclamer">We will send you a one time SMS message. Charges may apply.</div>
                     </div>
-                    <input type="button" clas="submit-btn" value="Sign In with OTP " onClick={onSubmit}/>
+                    <input type="button" className="submit-btn" value="Sign In with OTP " onClick={onSubmit}/>
                 </form>
                 
             </div>
