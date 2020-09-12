@@ -23,6 +23,10 @@ npm start
 # Important
 A static OTP of 1234 is kept, if 1234 is submitted it will be success else a wrong otp message will be displayed
 
+# Recording of Project in Action
+[Recording](https://drive.google.com/file/d/18ksYNwdDR5UIGcT51id-FecAlpVYlW3X/view?usp=sharing)
+
+
 ![](images/Capture1.PNG)
 ![](images/Capture2.PNG)
 ![](images/Capture3.PNG)
