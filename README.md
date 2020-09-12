@@ -23,7 +23,7 @@ npm start
 # Important
 A static OTP of 1234 is kept, if 1234 is submitted it will be success else a wrong otp message will be displayed
 
-![](images/Capture1)
-![](images/Capture2)
-![](images/Capture3)
+![](images/Capture1.png)
+![](images/Capture2.png)
+![](images/Capture3.png)
 
