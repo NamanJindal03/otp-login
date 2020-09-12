@@ -5,6 +5,7 @@ import logo from '../../images/AK_logo.png'
 import CountryCodes from './country_extension';
 import { isValidPhoneNumber } from 'react-phone-number-input'
 import { Redirect} from 'react-router-dom'
+import {generateOTP} from './api'
 
 
 const Signin = () =>{
@@ -20,9 +21,6 @@ const Signin = () =>{
 
     //sets state on change of value in the fields
     const handleChange = name => event =>{
-        console.log("here");
-        console.log(name);
-        console.log(event.target.value);
         setValues({...values, error:false, [name]:event.target.value})
     }
     const countryFlagHandler = () =>{
@@ -43,20 +41,37 @@ const Signin = () =>{
         event.preventDefault();
         //sets loading state to true, error to false
         setValues({...values, error: false, loading: true})
-        const completeNumber = `${country_code}${telephoneNumber}`;
-        console.log(completeNumber); 
-        if(completeNumber.length <5) {
+        const mobile_number = `${country_code}${telephoneNumber}`;
+        console.log(mobile_number); 
+        if(mobile_number.length <5) {
             alert('Too Short ')
-         } else if(isValidPhoneNumber(completeNumber)) {
-           alert('Valid number')
-           setValues({...values, error: false, loading: false, didRedirect: true})
+            
+         } 
+         /* checks whether phone number is valid or not of all countries*/
+         else if(isValidPhoneNumber(mobile_number)) {
+           generateOTP({mobile_number})
+            .then(data => {
+                if(data.error){
+                    setValues({...values, error: data.error, loading: false})
+                }else{ 
+                    setValues({
+                        ...values,
+                        didRedirect:true
+                    }) 
+                }
+                return;
+            })
+            .catch(err=>{
+                setValues({...values, error: "Can't process the request right now", loading: false})
+               
+            })
          } else {
-           alert('InValid number')
-           setValues({...values, error: "Invalid Phone Number", loading: true})
+           
+           setValues({...values, error: "Invalid Phone Number", loading: false})
          }
     }
 
-    //performs redirect on succesfull login
+    //performs redirect on succesfull phone number
     const performRedirect = () =>{
         if(didRedirect){
             return <Redirect to ={{
@@ -91,7 +106,7 @@ const Signin = () =>{
                             <img src={flagImg} alt="" id="flag-img"/>
                             <CountryCodes handleChange= {handleChange}/>
                         </div>
-                        <input type="number" id="telephone-number-input" onChange={handleChange("telephoneNumber")} value={telephoneNumber}/>
+                        <input type="number" id="telephone-number-input" onChange={handleChange("telephoneNumber")} value={telephoneNumber} name="mobile_number"/>
                         <div id="sms-disclamer">We will send you a one time SMS message. Charges may apply.</div>
                     </div>
                     <input type="button" className="submit-btn" value="Sign In with OTP " onClick={onSubmit}/>

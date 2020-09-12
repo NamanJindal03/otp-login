@@ -4,6 +4,7 @@ import { Redirect} from 'react-router-dom'
 import Signin from './components/user/signin'
 import Otp from './components/user/otp'
 import UnknownPage from './components/404';
+import SuccessPage from './components/success_page';
 const Routes = () =>{
     return(
         <Router>
@@ -12,6 +13,8 @@ const Routes = () =>{
                     <Route exact path="/"> <Redirect to="/sign-in" /> </Route>
                     <Route path="/sign-in" component={Signin} />
                     <Route path="/otp" component={Otp} />
+                    <Route path="/home" component={SuccessPage} />
+
                     <Route path='*' exact={true} component={UnknownPage} />
                 </Switch>
             

@@ -1,0 +1,57 @@
+#logo-3{
+    position: absolute;
+    left: calc(50% - 264px/2 - 16.5px);
+top: calc(50% - 50px/2 - 290px);
+}
+
+#success-text-1{
+    position: absolute;
+left: 13.07%;
+right: 14.13%;
+top: 55.42%;
+bottom: 41.13%;
+
+font-family: Work Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 28px;
+text-align: center;
+
+color: #333333;
+}
+
+#success-text-2{
+    position: absolute;
+left: 7.73%;
+right: 7.47%;
+top: 62.07%;
+bottom: 30.91%;
+
+font-family: Work Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+text-align: center;
+
+color: #999999;
+}
+
+#success-text-3{
+    position: absolute;
+left: 29.07%;
+right: 30.13%;
+top: 86.45%;
+bottom: 11.82%;
+
+font-family: Work Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+text-align:center;
+
+color: #999999;
+}

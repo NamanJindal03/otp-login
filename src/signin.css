@@ -12,9 +12,7 @@
     width: 174px;
     height: 28px;
     left: calc(50% - 174px/2 + 0.5px);
-    top: calc(50% - 28px/2 - 75px);
-  
-    font-style: normal;
+    top: calc(50% - 28px/2 - 75px);  
     font-weight: normal;
     font-size: 24px;
     line-height: 28px;
@@ -28,16 +26,10 @@
     height: 19px;
     left: calc(50% - 237px/2 + 1px);
     top: calc(50% - 19px/2 - 31.5px);
-  
-    font-family: Work Sans;
-    font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 19px;
     text-align: center;
-    /* identical to box height */
-  
-  
     color: #666666;
   }
   #phone-label{
@@ -75,12 +67,10 @@
   }
   #country_list{
     position: absolute;
-    width: 62px;
+    width: 20px;
     height: 17px;
     left: 43px;
     top: 15px;
-  
-    font-family: Work Sans;
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
@@ -92,18 +82,17 @@
   }
   #telephone-number-input{
     position: absolute;
-      width: 160px;
-      height: 21px;
-      left: 113px;
-      top: 11px;
-      font-family: Work Sans;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 18px;
-      line-height: 21px;
-      color: #333333;
-      border: none;
-      background-color: #eaeaea;
+    width: 160px;
+    height: 21px;
+    left: 81px;
+    top: 11px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #333333;
+    border: none;
+    background-color: #eaeaea;
   }
   #telephone-number-input:focus{
     outline:none;
@@ -119,22 +108,17 @@
   }
   #sms-disclamer{
     position: absolute;
-  width: 343px;
-  height: 28px;
-  left: calc(50% - 343px/2);
-  top: calc(50% - 28px/2 + 135px);
-  
-  font-family: Work Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 14px;
-  text-align: center;
-  
-  color: #999999;
+    width: 343px;
+    height: 28px;
+    left: calc(50% - 343px/2);
+    top: calc(50% - 28px/2 + 135px);  
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    
+    color: #999999;
   }
-  
-  
   
   /* Firefox */
   input[type=number] {
